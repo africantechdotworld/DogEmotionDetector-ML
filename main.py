@@ -4,7 +4,6 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import io
-import uvicorn
 import os
 
 
@@ -55,6 +54,3 @@ async def predict_dog_emotion_endpoint(file: UploadFile = File(...)):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing image: {str(e)}")
-    
-if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=2000)
