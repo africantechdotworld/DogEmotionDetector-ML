@@ -6,6 +6,7 @@ import numpy as np
 import io
 import os
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = FastAPI()
 
